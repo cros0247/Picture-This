@@ -9,13 +9,99 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
+<!-- Example Code 
+
+  <div class="container">
+        <h1>Adorable Dog Images</h1>
+        <section>
+            <h2>Same Image different sizes</h2>
+            <img alt="placehold picture" src="https://placehold.co/600x400", 
+            srcset="https://placehold.co/300x250 350w,
+            https://placehold.co/600x400 650w, 
+            https://placehold.co/900x850 1024w "
+            sizes="(max-width: 300px) 350px,
+            (max-width: 700px) 650px,
+            (max-width: 1024px) 1024px"
+            >
+        </section>
+        <section>
+            <h2>Same Image different resolution</h2>
+            <img class="profile" alt="placehold picture" src="https://placehold.co/600x400", 
+            srcset="https://placehold.co/400x400,
+            https://placehold.co/600x600 2x,
+            https://placehold.co/900x900 3x"
+            >
+        </section>
+        <section>
+            <h2>Art Direction Probs</h2>
+            <picture>
+                <source srcset="images/fall-dog-1200.jpg" 
+                media="(min-width:1024px)">
+
+                <source srcset="images/fall-dog-900.jpg" 
+                media="(min-width:900px)">
+
+                <source srcset="images/fall-dog-640.jpg" 
+                media="(min-width:650px)">
+
+                <img src="images/fall-dog-640.jpg" alt="dog in bed">
+            </picture>
+        </section>
+
+    </div>
+ images/museum-1920_x_960.jpg, images/museum-2880_x_960.jpg"
+-->
+
+<!--  Sizing Requirements
+
+  Landscape Image
+viewport 	 1x	     2x	      3x
+    320px	 320px	 640px	  960px
+    480px	 480px	 960px	  1440px
+    720px	 720px	 1440px 	2160px
+    960px	 960px	 1920px 	2880px
+
+  Square Image
+viewport	  1x	    2x	     3x
+    960px	  480px	  960px	   1440px
+    1280px	640px	  1280px	 1920px
+    1600px	800px	  1600px	 2400px
+ -->
+
 <body>
   <header class="header">
+
     <div class="title">
       <h1>Picture This!</h1>
       <h4>My Really Cool Blog Post</h4>
     </div>
-    <img src="images/museum.jpg" alt="placeholder">
+
+    <picture>
+      <!-- Landscape : Image should be under the title -->
+      <source srcset="images/museum-960x960.jpg, images/museum-960x1920.jpg, images/museum-960x2880.jpg"
+        media="(min-width:960px)">
+
+      <source srcset="images/museum-720x720.jpg, images/museum-720x1440.jpg, images/museum-720x2160.jpg"
+        media="(min-width:720px)">
+
+      <source srcset="images/museum-480x480.jpg, images/museum-480x960.jpg, images/museum-480x1440.jpg"
+        media="(min-width:480px)">
+
+      <source srcset="images/museum-320x320.jpg, images/museum-320x640.jpg, images/museum-320x960.jpg"
+        media="(min-width:320px)">
+
+      <!-- Square : Image should be next to the title -->
+      <source srcset="images/museum-960x480.jpg, images/museum-960x960.jpg, images/museum-960x1440.jpg"
+        media="(min-width:960px)">
+
+      <source srcset="images/museum-1280x640.jpg, images/museum-1280x1280.jpg, images/museum-1280x1920.jpg"
+        media="(min-width:1280px)">
+
+      <source srcset="images/museum-1600x800.jpg, images/museum-1600x1600.jpg, images/museum-1600x2400.jpg"
+        media="(min-width:1600px)">
+
+      <img src="images/museum.jpg" alt="placeholder">
+    </picture>
 
   </header>
 </body>
