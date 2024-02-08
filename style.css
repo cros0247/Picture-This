@@ -33,6 +33,12 @@ img {
   display: block; 
 }
 
+@media (min-width: 960px) {
+  .header {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (min-height: 960px) {
   .header {
     grid-template-columns: repeat(2, 1fr);
